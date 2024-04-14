@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour
 
     [Header("Keybinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
-    [SerializeField] KeyCode attackKey = KeyCode.Mouse0;
+    //[SerializeField] KeyCode attackKey = KeyCode.Mouse0;
 
     void Start()
     {

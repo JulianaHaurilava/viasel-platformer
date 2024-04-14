@@ -234,6 +234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSliderText: {fileID: 1042528295}
   soundEffectsSliderText: {fileID: 622551402}
+  musicSlider: {fileID: 480629647}
+  soundEffectsSlider: {fileID: 115904679}
 --- !u!1 &65998568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1048,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357303953}
   m_CullTransparentMesh: 0
+--- !u!1 &380787517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 380787519}
+  - component: {fileID: 380787518}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &380787518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380787517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f82d3a50e660e840bdb44f8c24ed8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &380787519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380787517}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 641.33826, y: 452.76285, z: -5.4977036}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &480629645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3287,6 +3333,18 @@ MonoBehaviour:
           m_StringArgument: ButtonClick
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 380787518}
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1852644155
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,3 +3808,4 @@ SceneRoots:
   - {fileID: 638642861}
   - {fileID: 968306320}
   - {fileID: 34725855}
+  - {fileID: 380787519}
