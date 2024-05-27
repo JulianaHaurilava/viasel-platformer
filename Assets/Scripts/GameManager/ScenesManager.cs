@@ -8,7 +8,7 @@ public class ScenesManager : MonoBehaviour
     private PlayerController player;
 
     private static int _maxLevel;
-    private static int levels = 2;
+    private static int levels = 3;
 
     void Start()
     {
@@ -35,11 +35,11 @@ public class ScenesManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void SwitchLevel(int death)
+    public void EndLevel(EndResult endResult)
     {
-        switch (death)
+        switch (endResult)
         {
-            case 0:
+            case EndResult.LEVEL_END:
                 if (SceneManager.GetActiveScene().buildIndex < levels)
                 {
                     player.Level++;
@@ -52,22 +52,12 @@ public class ScenesManager : MonoBehaviour
                 }
                 break;
 
-            case 1:
+            case EndResult.DEATH:
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 break;
             default:
                 break;
         }
 
-    }
-
-    public static void LoadLevel()
-    {
-        SceneManager.LoadScene(_maxLevel);
-    }
-
-    public static void EndGame()
-    {
-        SceneManager.LoadScene(0);
     }
 }

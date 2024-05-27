@@ -66,7 +66,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        grounded = true;
-        animator.SetBool("IsJumping", false);
+        if ((collision.gameObject.layer & 1) << whatIsGround.value != 0)
+        {
+            grounded = true;
+            animator.SetBool("IsJumping", false);
+        }
     }
 }

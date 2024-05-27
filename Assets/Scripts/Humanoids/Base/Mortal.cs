@@ -5,6 +5,8 @@ public abstract class Mortal : Killer
     public float Health;
     [SerializeField]
     protected HealthBar healthBar;
+    [SerializeField]
+    private ScenesManager manager;
 
     private float _maxHealth;
 
@@ -43,7 +45,7 @@ public abstract class Mortal : Killer
 
     private void EndGame()
     {
-        ScenesManager.EndGame();
+        manager.EndLevel(EndResult.DEATH);
     }
 
     private void CheckIfDead()
