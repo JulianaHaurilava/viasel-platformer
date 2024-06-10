@@ -39,6 +39,11 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public static void LoadLevel()
+    {
+        SceneManager.LoadScene(_maxLevel);
+    }
+
     public void EndLevel(EndResult endResult)
     {
         switch (endResult)

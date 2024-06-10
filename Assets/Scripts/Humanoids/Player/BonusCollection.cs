@@ -1,16 +1,20 @@
 using TMPro;
-
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerController))]
 public class BonusCollection : MonoBehaviour
 {
-    [SerializeField]
     private PlayerController playerController;
 
     private int _bonusValue = 0;
 
     [SerializeField]
     private TMP_Text bonusText;
+
+    void Start()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
