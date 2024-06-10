@@ -22,7 +22,6 @@ public abstract class Mortal : Killer
 
     public virtual void GetDamage(float damage)
     {
-        animator.SetTrigger("Hurt");
         Health -= damage;
         if (healthBar != null)
         {
@@ -53,6 +52,10 @@ public abstract class Mortal : Killer
         if (Health <= 0)
         {
             Die();
+        }
+        else
+        {
+            animator.SetTrigger("Hurt");
         }
     }
 }

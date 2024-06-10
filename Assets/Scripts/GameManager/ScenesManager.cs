@@ -6,6 +6,8 @@ public class ScenesManager : MonoBehaviour
 {
     [SerializeField]
     private PlayerController player;
+    [SerializeField]
+    private GameObject resultPanel;
 
     private static int _maxLevel;
     private static int levels = 3;
@@ -57,12 +59,13 @@ public class ScenesManager : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(0);
+                    MenuEnd();
                 }
                 break;
 
             case EndResult.DEATH:
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                resultPanel.SetActive(true);
                 break;
             default:
                 break;

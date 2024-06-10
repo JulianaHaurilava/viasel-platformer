@@ -7,11 +7,22 @@ public class EnemyController : Mortal
 
     [SerializeField]
     private GameObject target;
+    private Mortal _player;
+
     [SerializeField]
     private float triggerDistance;
 
     private bool _facingRight = true;
     private float _distance;
+
+    protected override void Start()
+    {
+        base.Start();
+        if (target.TryGetComponent(out Mortal mortal))
+        {
+            _player = mortal;
+        }
+    }
 
     protected override void Update()
     {
@@ -23,7 +34,10 @@ public class EnemyController : Mortal
             if (_distance <= AttackRange)
             {
                 animator.SetBool("Run", false);
-                Attack();
+                if (_player.Health > 0)
+                {
+                    Attack();
+                }
                 return;
             }
             animator.SetBool("Run", true);
