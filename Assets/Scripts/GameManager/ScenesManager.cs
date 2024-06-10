@@ -1,16 +1,21 @@
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScenesManager : MonoBehaviour
 {
     [SerializeField]
     private PlayerController player;
     [SerializeField]
-    private GameObject resultPanel;
+    private GameObject loosePanel;
+
+    [SerializeField]
+    private GameObject winPanel;
+    [SerializeField]
+    private Text pointsText;
 
     private static int _maxLevel;
-    private static int levels = 3;
 
     void Start()
     {
@@ -51,25 +56,20 @@ public class ScenesManager : MonoBehaviour
         switch (endResult)
         {
             case EndResult.LEVEL_END:
-                if (SceneManager.GetActiveScene().buildIndex < levels)
-                {
-                    player.Level++;
-                    SaveSystem.SavePlayer(player);
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                }
-                else
-                {
-                    MenuEnd();
-                }
-                break;
 
+                player.Level++;
+                SaveSystem.SavePlayer(player);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                break;
             case EndResult.DEATH:
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                resultPanel.SetActive(true);
+                loosePanel.SetActive(true);
+                break;
+            case EndResult.FINAL_END:
+                pointsText.text = player.Points.ToString();
+                winPanel.SetActive(true);
                 break;
             default:
                 break;
         }
-
     }
 }

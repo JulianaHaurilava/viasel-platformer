@@ -3,7 +3,8 @@ using UnityEngine;
 public enum EndResult
 {
     DEATH,
-    LEVEL_END
+    LEVEL_END,
+    FINAL_END
 }
 
 public class GameEnd : MonoBehaviour
