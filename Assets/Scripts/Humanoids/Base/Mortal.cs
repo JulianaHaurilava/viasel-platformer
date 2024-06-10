@@ -39,10 +39,23 @@ public abstract class Mortal : Killer
     protected virtual void Die()
     {
         animator.SetTrigger("Die");
-        Invoke(nameof(EndGame), 1f);
+        DeactivateHumanoid();
     }
 
-    private void EndGame()
+    protected void DeactivateHumanoid()
+    {
+        Transform colliders = transform.Find("Colliders");
+        colliders.gameObject.SetActive(false);
+        Transform attackColliders = transform.Find("AttackZone");
+        attackColliders.gameObject.SetActive(false);
+
+        if (TryGetComponent(out Rigidbody2D rb))
+        {
+            rb.bodyType = RigidbodyType2D.Static;
+        }
+    }
+
+    protected void EndGame()
     {
         manager.EndLevel(EndResult.DEATH);
     }

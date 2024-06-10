@@ -62,6 +62,7 @@ public class EnemyController : Mortal
     }
     protected override void Die()
     {
-        Destroy(gameObject);
+        base.Die();
+        enabled = false;
     }
 }

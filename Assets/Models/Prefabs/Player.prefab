@@ -65,9 +65,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016326427, y: 0.30693662}
+  m_Offset: {x: 0.016326427, y: 0.3128543}
   serializedVersion: 2
-  m_Radius: 0.2551037
+  m_Radius: 0.24918604
 --- !u!61 &4210185659067135848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -500,7 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b144b24b513ac44c9583bdddd04e8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
   bonusText: {fileID: 0}
 --- !u!114 &588765503002373739
 MonoBehaviour:
@@ -525,7 +524,6 @@ MonoBehaviour:
   Health: 10
   healthBar: {fileID: 0}
   manager: {fileID: 0}
-  inventoryManager: {fileID: 0}
   bonusCollection: {fileID: 5802923980490070960}
   Level: 1
   Points: 0

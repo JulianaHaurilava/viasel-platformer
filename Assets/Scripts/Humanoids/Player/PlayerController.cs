@@ -24,4 +24,10 @@ public class PlayerController : Mortal
             return;
         }
     }
+
+    protected override void Die()
+    {
+        base.Die();
+        Invoke(nameof(EndGame), 1f);
+    }
 }
