@@ -770,7 +770,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c40213b92dd861f47809b254c3bcbfab, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -11159,7 +11159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 821493757}
-  resultPanel: {fileID: 166957085}
+  loosePanel: {fileID: 0}
+  winPanel: {fileID: 0}
+  pointsText: {fileID: 0}
 --- !u!4 &1837934923
 Transform:
   m_ObjectHideFlags: 0
