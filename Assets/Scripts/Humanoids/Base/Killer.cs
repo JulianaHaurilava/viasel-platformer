@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Killer : Humanoid
@@ -7,8 +6,6 @@ public abstract class Killer : Humanoid
     public float AttackRange = 1f;
     [SerializeField]
     private int attackDamage = 10;
-    [SerializeField]
-    private Transform attackPoint;
 
     [SerializeField]
     protected float coolDownRate = 2;
@@ -38,31 +35,25 @@ public abstract class Killer : Humanoid
         {
             animator.SetTrigger("Attack");
             audioManager.Play("AttackSound");
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, AttackRange, targetLayer);
+            ResetCoolDownRate();
+        }
+    }
 
-            foreach (Collider2D enemy in hitEnemies)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(targetTag))
+        {
+            Transform parent = collision.transform.parent;
+            if (parent.TryGetComponent(out Mortal mortal))
             {
-                if (enemy.CompareTag(targetTag))
-                {
-                    if (enemy.TryGetComponent(out Mortal mortal))
-                    {
-                        mortal.GetDamage(attackDamage);
-                        ResetCoolDownRate();
-                    }
-                }
+                mortal.GetDamage(attackDamage);
             }
         }
     }
+
     private void ResetCoolDownRate()
     {
         _coolDownTime = coolDownRate;
         _readyToAttack = false;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-            return;
-        Gizmos.DrawWireSphere(attackPoint.position, AttackRange);
     }
 }

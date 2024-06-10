@@ -4,24 +4,20 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField]
-    float speed = 10f;
+    private float speed = 10f;
 
     [Header("Jump")]
     [SerializeField]
-    float jumpForce = 500f;
+    private float jumpForce = 500f;
     [SerializeField]
-    float airMultiplier;
+    private float airMultiplier;
 
     [Header("Ground Check")]
     [SerializeField]
     LayerMask whatIsGround;
     private bool grounded = true;
 
-    [Header("Health")]
-    private PlayerHealth playerHealth;
-
     private Rigidbody2D rb;
-
     private Animator animator;
 
     void Start()

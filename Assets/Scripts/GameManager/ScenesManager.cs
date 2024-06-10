@@ -34,6 +34,10 @@ public class ScenesManager : MonoBehaviour
     {
         Application.Quit();
     }
+    public static void MenuEnd()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     public void EndLevel(EndResult endResult)
     {

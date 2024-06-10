@@ -2686,7 +2686,6 @@ MonoBehaviour:
   audioManager: {fileID: 972796440}
   AttackRange: 1
   attackDamage: 2
-  attackPoint: {fileID: 110455149}
   coolDownRate: 2
   targetTag: Player
   targetLayer:
@@ -23633,34 +23632,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2780913872591495777, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
   m_PrefabInstance: {fileID: 7447804444528840111}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &821493757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185542358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942770ddfdee7644d9c40df2d9e6e793, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 972796440}
-  AttackRange: 1
-  attackDamage: 1
-  attackPoint: {fileID: 1639835040}
-  coolDownRate: 1
-  targetTag: Enemy
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  Health: 10
-  healthBar: {fileID: 1475131114}
-  manager: {fileID: 1837934924}
-  inventoryManager: {fileID: 1251665363}
-  bonusCollection: {fileID: 7447804444528840112}
-  Level: 2
-  Points: 0
 --- !u!1 &821570641
 GameObject:
   m_ObjectHideFlags: 0
@@ -37842,9 +37813,9 @@ MonoBehaviour:
           m_StringArgument: ButtonClick
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1837934924}
         m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: EndGame
+        m_MethodName: MenuEnd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46371,7 +46342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 340176923}
-  playerController: {fileID: 821493757}
+  playerController: {fileID: 0}
   slots:
   - {fileID: 755569077}
   - {fileID: 464557553}
@@ -55430,11 +55401,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1639835040 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7614664010899802685, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
-  m_PrefabInstance: {fileID: 7447804444528840111}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1644370757
 GameObject:
   m_ObjectHideFlags: 0
@@ -60610,7 +60576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f82d3a50e660e840bdb44f8c24ed8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 821493757}
+  player: {fileID: 0}
 --- !u!1 &1839582102
 GameObject:
   m_ObjectHideFlags: 0
@@ -73870,6 +73836,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1940351180}
     m_Modifications:
+    - target: {fileID: 588765503002373739, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1837934924}
+    - target: {fileID: 588765503002373739, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1475131114}
+    - target: {fileID: 588765503002373739, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 972796440}
     - target: {fileID: 1440012379341787952, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
       propertyPath: jumpForce
       value: 100
@@ -73933,24 +73911,21 @@ PrefabInstance:
     - target: {fileID: 5802923980490070960, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 821493757}
+      objectReference: {fileID: 7447804444528840112}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4291624319605884852, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 821493757}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
 --- !u!114 &7447804444528840112 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5802923980490070960, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 588765503002373739, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
   m_PrefabInstance: {fileID: 7447804444528840111}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185542358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b144b24b513ac44c9583bdddd04e8f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 942770ddfdee7644d9c40df2d9e6e793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!50 &7633690332705614810
