@@ -8,7 +8,9 @@ public class ScenesManager : MonoBehaviour
     [SerializeField]
     private PlayerController player;
     [SerializeField]
-    private GameObject loosePanel;
+    private GameObject gameOverPanel;
+    [SerializeField]
+    private GameObject levelCompletedPanel;
 
     [SerializeField]
     private GameObject winPanel;
@@ -50,6 +52,10 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene(_maxLevel);
     }
+    public static void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
     public void EndLevel(EndResult endResult)
     {
@@ -59,10 +65,12 @@ public class ScenesManager : MonoBehaviour
 
                 player.Level++;
                 SaveSystem.SavePlayer(player);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                pointsText.text = player.Points.ToString();
+
+                levelCompletedPanel.SetActive(true);
                 break;
             case EndResult.DEATH:
-                loosePanel.SetActive(true);
+                gameOverPanel.SetActive(true);
                 break;
             case EndResult.FINAL_END:
                 pointsText.text = player.Points.ToString();
