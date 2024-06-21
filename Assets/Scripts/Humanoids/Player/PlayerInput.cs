@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerInput : MonoBehaviour
 {
+    public bool CanMove = true;
     private const string HORIZONTAL_AXIS = "Horizontal";
 
     private float input;
@@ -24,15 +25,22 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        input = Input.GetAxisRaw(HORIZONTAL_AXIS);
-
-        if (Input.GetKeyDown(jumpKey))
+        if (!CanMove)
         {
-            _playerMovement.Jump();
+            input = 0;
         }
-        if (Input.GetKeyDown(attackKey))
+        else
         {
-            _killer.Attack();
+            input = Input.GetAxisRaw(HORIZONTAL_AXIS);
+
+            if (Input.GetKeyDown(jumpKey))
+            {
+                _playerMovement.Jump();
+            }
+            if (Input.GetKeyDown(attackKey))
+            {
+                _killer.Attack();
+            }
         }
     }
     private void FixedUpdate()
