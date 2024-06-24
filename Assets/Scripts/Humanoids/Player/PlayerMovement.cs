@@ -39,11 +39,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (input > 0)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            transform.localScale = new Vector3(2, 2, 2);
         }
         else if (input < 0)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            transform.localScale = new Vector3(-2, 2, 2);
         }
 
         bool moving = input != 0;

@@ -12,7 +12,8 @@ public class EnemyController : Mortal
     [SerializeField]
     private float triggerDistance;
 
-    private bool _facingRight = true;
+    [SerializeField]
+    private bool facingRight = true;
     private float _distance;
 
     protected override void Start()
@@ -48,7 +49,7 @@ public class EnemyController : Mortal
     void MoveToPlayer()
     {
         Vector2 direction = target.transform.position - transform.position;
-        if (direction.x < 0 && _facingRight || direction.x > 0 && !_facingRight)
+        if (direction.x < 0 && facingRight || direction.x > 0 && !facingRight)
         {
             Flip();
         }
@@ -57,7 +58,7 @@ public class EnemyController : Mortal
 
     void Flip()
     {
-        _facingRight = !_facingRight;
+        facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
     protected override void Die()
