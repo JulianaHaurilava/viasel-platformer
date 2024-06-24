@@ -16387,17 +16387,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1940351180}
     m_Modifications:
-    - target: {fileID: 5820745161629238209, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5820745161629238209, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300016, guid: 317b8365a4649ab459f6cb58ec8f9f18, type: 3}
     - target: {fileID: 7303051093346256691, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7303051093346256691, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16455,6 +16447,10 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1966523819}
+    - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
+      propertyPath: triggerDistance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 9206244805993333426, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -17288,17 +17284,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1940351180}
     m_Modifications:
-    - target: {fileID: 368403063158817255, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5820745161629238209, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7303051093346256691, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7303051093346256691, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17341,6 +17329,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
+      propertyPath: Health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 822727453}
@@ -17356,13 +17348,17 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1966523819}
+    - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
+      propertyPath: triggerDistance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 9206244805993333426, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9206244805993333426, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18742,13 +18738,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1940351180}
     m_Modifications:
-    - target: {fileID: 5820745161629238209, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7303051093346256691, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_LocalScale.x
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7303051093346256691, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18791,6 +18783,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
+      propertyPath: Health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 822727453}
@@ -18798,6 +18794,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1837934922}
+    - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: audioManager
       value: 
@@ -18808,7 +18808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9206244805993333426, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

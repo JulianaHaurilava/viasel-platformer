@@ -13372,6 +13372,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1837934922}
     - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
+      propertyPath: AttackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 497913654}
