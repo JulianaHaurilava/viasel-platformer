@@ -2218,9 +2218,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1966523818}
   - {fileID: 2042293834}
   - {fileID: 1837934923}
-  - {fileID: 972796439}
   - {fileID: 1742938625}
   - {fileID: 1048029230}
   - {fileID: 1332100801}
@@ -11898,8 +11898,8 @@ Tilemap:
   - first: {x: 17, y: -24, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 16
+      m_TileIndex: 19
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -11908,8 +11908,8 @@ Tilemap:
   - first: {x: 18, y: -24, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 19
-      m_TileSpriteIndex: 19
+      m_TileIndex: 8
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -12495,11 +12495,21 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 18, y: -23, z: 0}
+  - first: {x: 17, y: -23, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 21
       m_TileSpriteIndex: 24
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 18, y: -23, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -15663,7 +15673,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1076
+  - m_RefCount: 1077
     m_Data: {fileID: 11400000, guid: dcbc1b35ab6907448bddc6bc23e6789b, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -15732,7 +15742,7 @@ Tilemap:
     m_Data: {fileID: -575003177014463960, guid: 157cbc340d2b7e64ab85168e80e95550, type: 3}
   - m_RefCount: 45
     m_Data: {fileID: -3948514355874604083, guid: 157cbc340d2b7e64ab85168e80e95550, type: 3}
-  - m_RefCount: 1076
+  - m_RefCount: 1077
     m_Data: {fileID: -6729147656762955551, guid: 157cbc340d2b7e64ab85168e80e95550, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -15749,7 +15759,7 @@ Tilemap:
   - m_RefCount: 5
     m_Data: {fileID: -7931676834721962443, guid: 157cbc340d2b7e64ab85168e80e95550, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1237
+  - m_RefCount: 1238
     m_Data:
       e00: 1
       e01: 0
@@ -15768,7 +15778,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 1237
+  - m_RefCount: 1238
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -15911,13 +15921,13 @@ CompositeCollider2D:
         Y: -205000000
       - X: 190000000
         Y: -220000000
-      - X: 181875008
+      - X: 171875008
         Y: -220000000
-      - X: 180937504
+      - X: 170937504
         Y: -220937504
-      - X: 180000000
+      - X: 170000000
         Y: -225000000
-      - X: 180000000
+      - X: 170000000
         Y: -230000000
       - X: -110000000
         Y: -230000000
@@ -15977,10 +15987,10 @@ CompositeCollider2D:
       - {x: 19.093748, y: -20.093758}
       - {x: 19, y: -20.500004}
       - {x: 18.999971, y: -22}
-      - {x: 18.187492, y: -22.000008}
-      - {x: 18.093748, y: -22.093758}
-      - {x: 18, y: -22.500004}
-      - {x: 17.999971, y: -23}
+      - {x: 17.187492, y: -22.000008}
+      - {x: 17.093748, y: -22.093758}
+      - {x: 17, y: -22.500004}
+      - {x: 16.999971, y: -23}
       - {x: -11, y: -22.999971}
       - {x: -11.00003, y: -22}
       - {x: -14, y: -21.999971}
@@ -16440,7 +16450,7 @@ PrefabInstance:
     - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: audioManager
       value: 
-      objectReference: {fileID: 972796440}
+      objectReference: {fileID: 1966523819}
     - target: {fileID: 9206244805993333426, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -16469,102 +16479,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9206244805993333426, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
   m_PrefabInstance: {fileID: 971279542}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &972796438
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 972796439}
-  - component: {fileID: 972796440}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &972796439
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972796438}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 986.8123, y: 452.44064, z: -5.859669}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 573198879}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &972796440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972796438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671dc52c807b25d41b40e32131078405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicMixerGroup: {fileID: -1119656454826360389, guid: 54c3030fd9a35f94f9b2e6ba291e6f9c, type: 2}
-  soundEffectsMixerGroup: {fileID: -3473483500841967825, guid: 54c3030fd9a35f94f9b2e6ba291e6f9c, type: 2}
-  sounds:
-  - audioType: 1
-    source: {fileID: 0}
-    clipName: MainAmbient
-    audioClip: {fileID: 8300000, guid: b8189b0b4eccf2543ba859aa007cbb7f, type: 3}
-    isLoop: 1
-    playOnAwake: 1
-    volume: 1
-  - audioType: 1
-    source: {fileID: 0}
-    clipName: MenuMusic
-    audioClip: {fileID: 8300000, guid: 70e4565f8b7bca94481234dab525aa47, type: 3}
-    isLoop: 1
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: SwordSound (1)
-    audioClip: {fileID: 8300000, guid: 36b040de4f8eef54dbd4efc9191e2009, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: SwordSound (2)
-    audioClip: {fileID: 8300000, guid: b63d0385c95084d43a141c6966dd9514, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: AttackSound
-    audioClip: {fileID: 8300000, guid: fda3e93bdabcf3f4499fa54c4f45953a, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: SwordSound (3)
-    audioClip: {fileID: 8300000, guid: fda3e93bdabcf3f4499fa54c4f45953a, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: ButtonClick
-    audioClip: {fileID: 8300000, guid: 622df6012652bdb498c7ec99b1b8a532, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
 --- !u!1 &991785660
 GameObject:
   m_ObjectHideFlags: 0
@@ -17429,7 +17343,7 @@ PrefabInstance:
     - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: audioManager
       value: 
-      objectReference: {fileID: 972796440}
+      objectReference: {fileID: 1966523819}
     - target: {fileID: 9206244805993333426, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -18867,7 +18781,7 @@ PrefabInstance:
     - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: audioManager
       value: 
-      objectReference: {fileID: 972796440}
+      objectReference: {fileID: 1966523819}
     - target: {fileID: 9206244805993333426, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -20719,6 +20633,88 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2161636, y: 2.3152862}
   m_EdgeRadius: 0
+--- !u!1 &1966523817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966523818}
+  - component: {fileID: 1966523819}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1966523818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966523817}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 986.8123, y: 452.44064, z: -5.859669}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 573198879}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1966523819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966523817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671dc52c807b25d41b40e32131078405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicMixerGroup: {fileID: -1119656454826360389, guid: 54c3030fd9a35f94f9b2e6ba291e6f9c, type: 2}
+  soundEffectsMixerGroup: {fileID: -3473483500841967825, guid: 54c3030fd9a35f94f9b2e6ba291e6f9c, type: 2}
+  sounds:
+  - audioType: 1
+    source: {fileID: 0}
+    clipName: Taniec2
+    audioClip: {fileID: 8300000, guid: d61b5290390af1049b511bca6d039d38, type: 3}
+    isLoop: 1
+    playOnAwake: 1
+    volume: 1
+  - audioType: 0
+    source: {fileID: 0}
+    clipName: NonLethal
+    audioClip: {fileID: 8300000, guid: 36b040de4f8eef54dbd4efc9191e2009, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 1
+  - audioType: 0
+    source: {fileID: 0}
+    clipName: Miss
+    audioClip: {fileID: 8300000, guid: b63d0385c95084d43a141c6966dd9514, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 1
+  - audioType: 0
+    source: {fileID: 0}
+    clipName: Lethal
+    audioClip: {fileID: 8300000, guid: fda3e93bdabcf3f4499fa54c4f45953a, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 1
+  - audioType: 0
+    source: {fileID: 0}
+    clipName: ButtonClick
+    audioClip: {fileID: 8300000, guid: 622df6012652bdb498c7ec99b1b8a532, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 1
 --- !u!1 &1977608576
 GameObject:
   m_ObjectHideFlags: 0
@@ -22021,7 +22017,7 @@ PrefabInstance:
     - target: {fileID: 588765503002373739, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
       propertyPath: audioManager
       value: 
-      objectReference: {fileID: 972796440}
+      objectReference: {fileID: 1966523819}
     - target: {fileID: 588765503002373739, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
       propertyPath: inventoryManager
       value: 

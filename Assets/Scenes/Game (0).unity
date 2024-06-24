@@ -184,6 +184,7 @@ Transform:
   - {fileID: 454016001}
   - {fileID: 2004030187}
   - {fileID: 1868634549}
+  - {fileID: 409844835}
   m_Father: {fileID: 1018671122}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &41797993
@@ -1540,6 +1541,68 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3564026850829729314, guid: 72a905bcc22e3e443be6f48bfb173c00, type: 3}
   m_PrefabInstance: {fileID: 374209830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &409844834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 24130715}
+    m_Modifications:
+    - target: {fileID: 5195500821582717841, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_Name
+      value: PF Village Props - Billboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.758453
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.128562
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.522528
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+--- !u!4 &409844835 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5195500821582717843, guid: 6ecf5bcec20adfa429a788f660f29ff5, type: 3}
+  m_PrefabInstance: {fileID: 409844834}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &431832693
 PrefabInstance:
@@ -8415,42 +8478,28 @@ MonoBehaviour:
   sounds:
   - audioType: 1
     source: {fileID: 0}
-    clipName: MainAmbient
-    audioClip: {fileID: 8300000, guid: b8189b0b4eccf2543ba859aa007cbb7f, type: 3}
+    clipName: Taniec
+    audioClip: {fileID: 8300000, guid: de353984adeb9cb4f9c95ade2d97187d, type: 3}
     isLoop: 1
     playOnAwake: 1
     volume: 1
-  - audioType: 1
-    source: {fileID: 0}
-    clipName: MenuMusic
-    audioClip: {fileID: 8300000, guid: 70e4565f8b7bca94481234dab525aa47, type: 3}
-    isLoop: 1
-    playOnAwake: 0
-    volume: 1
   - audioType: 0
     source: {fileID: 0}
-    clipName: SwordSound (1)
+    clipName: NonLethal
     audioClip: {fileID: 8300000, guid: 36b040de4f8eef54dbd4efc9191e2009, type: 3}
     isLoop: 0
     playOnAwake: 0
     volume: 1
   - audioType: 0
     source: {fileID: 0}
-    clipName: SwordSound (2)
+    clipName: Miss
     audioClip: {fileID: 8300000, guid: b63d0385c95084d43a141c6966dd9514, type: 3}
     isLoop: 0
     playOnAwake: 0
     volume: 1
   - audioType: 0
     source: {fileID: 0}
-    clipName: AttackSound
-    audioClip: {fileID: 8300000, guid: fda3e93bdabcf3f4499fa54c4f45953a, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: SwordSound (3)
+    clipName: Lethal
     audioClip: {fileID: 8300000, guid: fda3e93bdabcf3f4499fa54c4f45953a, type: 3}
     isLoop: 0
     playOnAwake: 0
@@ -13313,7 +13362,7 @@ Transform:
   m_GameObject: {fileID: 1949329599}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.12, y: 3.75, z: 0}
+  m_LocalPosition: {x: 50.68, y: 3.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -34,7 +34,7 @@ public abstract class Killer : Humanoid
         if (_readyToAttack)
         {
             animator.SetTrigger("Attack");
-            audioManager.Play("AttackSound");
+            audioManager.Play("Miss");
             ResetCoolDownRate();
         }
     }

@@ -64,10 +64,12 @@ public abstract class Mortal : Killer
     {
         if (Health <= 0)
         {
+            audioManager.Play("Lethal");
             Die();
         }
         else
         {
+            audioManager.Play("NonLethal");
             animator.SetTrigger("Hurt");
         }
     }
