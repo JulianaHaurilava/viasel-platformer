@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class EnemyController : Mortal
 {
@@ -49,19 +50,23 @@ public class EnemyController : Mortal
     void MoveToPlayer()
     {
         Vector2 direction = target.transform.position - transform.position;
-        if (direction.x < 0 && facingRight || direction.x > 0 && !facingRight)
+        if (direction.x < 0 && facingRight)
         {
-            Flip();
+            Flip(-1);
+        }
+        else if (direction.x > 0 && !facingRight)
+        {
+            Flip(1);
         }
         rb.velocity = new Vector2(direction.normalized.x * moveSpeed, rb.velocity.y);
     }
 
-    void Flip()
+    void Flip(int k)
     {
         facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        transform.localScale = new Vector3(k * 2, 2, 2);
     }
-    protected override void Die()
+protected override void Die()
     {
         base.Die();
         enabled = false;

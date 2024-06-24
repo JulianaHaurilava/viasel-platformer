@@ -16,6 +16,8 @@ public class ScenesManager : MonoBehaviour
     private GameObject winPanel;
     [SerializeField]
     private Text pointsText;
+    [SerializeField]
+    private string maxLevelPoints;
 
     private static int _maxLevel;
 
@@ -65,7 +67,7 @@ public class ScenesManager : MonoBehaviour
 
                 player.Level++;
                 SaveSystem.SavePlayer(player);
-                pointsText.text = player.Points.ToString();
+                pointsText.text = $"{player.Points}/{maxLevelPoints}";
 
                 levelCompletedPanel.SetActive(true);
                 break;
@@ -73,7 +75,7 @@ public class ScenesManager : MonoBehaviour
                 gameOverPanel.SetActive(true);
                 break;
             case EndResult.FINAL_END:
-                pointsText.text = player.Points.ToString();
+                pointsText.text = $"{player.Points}/{maxLevelPoints}";
                 winPanel.SetActive(true);
                 break;
             default:

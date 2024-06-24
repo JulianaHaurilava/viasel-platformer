@@ -9425,7 +9425,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 0/3
 --- !u!222 &1130004709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12961,6 +12961,7 @@ MonoBehaviour:
   levelCompletedPanel: {fileID: 1596465247}
   winPanel: {fileID: 0}
   pointsText: {fileID: 1130004708}
+  maxLevelPoints: 3
 --- !u!4 &1837934923
 Transform:
   m_ObjectHideFlags: 0

@@ -12180,6 +12180,7 @@ MonoBehaviour:
   levelCompletedPanel: {fileID: 1596465247}
   winPanel: {fileID: 0}
   pointsText: {fileID: 1130004708}
+  maxLevelPoints: 6
 --- !u!4 &1837934923
 Transform:
   m_ObjectHideFlags: 0
