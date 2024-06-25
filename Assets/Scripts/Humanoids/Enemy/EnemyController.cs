@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class EnemyController : Mortal
 {
@@ -35,6 +34,7 @@ public class EnemyController : Mortal
         {
             if (_distance <= AttackRange)
             {
+                rb.velocity = new Vector2(0, 0);
                 animator.SetBool("Run", false);
                 if (_player.Health > 0)
                 {
@@ -47,7 +47,7 @@ public class EnemyController : Mortal
         }
     }
 
-    void MoveToPlayer()
+    private void MoveToPlayer()
     {
         Vector2 direction = target.transform.position - transform.position;
         if (direction.x < 0 && facingRight)
@@ -61,14 +61,17 @@ public class EnemyController : Mortal
         rb.velocity = new Vector2(direction.normalized.x * moveSpeed, rb.velocity.y);
     }
 
-    void Flip(int k)
+    private void Flip(int k)
     {
         facingRight = !facingRight;
         transform.localScale = new Vector3(k * 2, 2, 2);
     }
-protected override void Die()
+
+    protected override void Die()
     {
         base.Die();
         enabled = false;
     }
+
+
 }

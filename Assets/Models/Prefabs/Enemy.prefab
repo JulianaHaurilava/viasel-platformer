@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 0}
-  AttackRange: 3
+  AttackRange: 1.5
   attackDamage: 2
   coolDownRate: 2
   targetTag: Player
