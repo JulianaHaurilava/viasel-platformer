@@ -9,11 +9,12 @@ public class Humanoid : MonoBehaviour
     [SerializeField]
     protected AudioManager audioManager;
 
-    protected Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D Rb;
 
     protected virtual void Start()
     {
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        Rb = GetComponent<Rigidbody2D>();
     }
 }

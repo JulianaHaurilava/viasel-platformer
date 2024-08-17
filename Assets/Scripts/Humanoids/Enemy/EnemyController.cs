@@ -1,3 +1,4 @@
+using Assets.Scripts.Humanoids.Enemy.States;
 using UnityEngine;
 
 public class EnemyController : Mortal
@@ -14,64 +15,49 @@ public class EnemyController : Mortal
 
     [SerializeField]
     private bool facingRight = true;
-    private float _distance;
+
+    private IEnemyState _currentState;
+    private IEnemyState _previousState;
+    public Animator Animator { get; private set; }
+    public float DistanceToPlayer { get; private set; }
+    public float TriggerDistance => triggerDistance;
+    public Mortal Player => _player;
+    public bool FacingRight { get; set; } = true;
+    public float MoveSpeed => moveSpeed;
 
     protected override void Start()
     {
         base.Start();
+        Animator = GetComponent<Animator>();
+        Rb = GetComponent<Rigidbody2D>();
+
         if (target.TryGetComponent(out Mortal mortal))
         {
             _player = mortal;
         }
+
+        ChangeState(new IdleState());
     }
 
     protected override void Update()
     {
         base.Update();
-        _distance = Vector3.Distance(transform.position, target.transform.position);
 
-        if (_distance <= triggerDistance)
-        {
-            if (_distance <= AttackRange)
-            {
-                rb.velocity = new Vector2(0, 0);
-                animator.SetBool("Run", false);
-                if (_player.Health > 0)
-                {
-                    Attack();
-                }
-                return;
-            }
-            animator.SetBool("Run", true);
-            MoveToPlayer();
-        }
+        DistanceToPlayer = Vector3.Distance(transform.position, target.transform.position);
+        _currentState?.Execute();
     }
 
-    private void MoveToPlayer()
+    public void ChangeState(IEnemyState newState)
     {
-        Vector2 direction = target.transform.position - transform.position;
-        if (direction.x < 0 && facingRight)
-        {
-            Flip(-1);
-        }
-        else if (direction.x > 0 && !facingRight)
-        {
-            Flip(1);
-        }
-        rb.velocity = new Vector2(direction.normalized.x * moveSpeed, rb.velocity.y);
+        _previousState = _currentState;
+        _currentState?.Exit();
+        _currentState = newState;
+        _currentState.Enter(this);
     }
 
-    private void Flip(int k)
-    {
-        facingRight = !facingRight;
-        transform.localScale = new Vector3(k * 2, 2, 2);
-    }
-
-    protected override void Die()
+    public override void Die()
     {
         base.Die();
-        enabled = false;
+        ChangeState(new DeadState());
     }
-
-
 }

@@ -36,7 +36,7 @@ public abstract class Mortal : Killer
         healthBar.UpdateHealthBar(Health);
     }
 
-    protected virtual void Die()
+    public virtual void Die()
     {
         animator.SetTrigger("Die");
         DeactivateHumanoid();
@@ -59,7 +59,6 @@ public abstract class Mortal : Killer
     {
         manager.EndLevel(EndResult.DEATH);
     }
-
     private void CheckIfDead()
     {
         if (Health <= 0)

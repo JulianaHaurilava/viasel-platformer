@@ -25,7 +25,7 @@ public class PlayerController : Mortal
         }
     }
 
-    protected override void Die()
+    public override void Die()
     {
         base.Die();
         Invoke(nameof(EndGame), 1f);
