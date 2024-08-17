@@ -2154,7 +2154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  resultPanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  levelCompletedPanel: {fileID: 0}
+  winPanel: {fileID: 0}
+  pointsText: {fileID: 0}
+  maxLevelPoints: 
 --- !u!4 &380787519
 Transform:
   m_ObjectHideFlags: 0
@@ -2381,7 +2385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 130.84998}
+  m_AnchoredPosition: {x: 0, y: 154}
   m_SizeDelta: {x: 1406.2522, y: 261.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &502181150
@@ -2404,7 +2408,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "vauka\u0142ak"
+  m_text: "viasie\u013A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e429f8424731ef4cbd74a0a2b9e1042, type: 2}
   m_sharedMaterial: {fileID: -3223835664359742529, guid: 7e429f8424731ef4cbd74a0a2b9e1042, type: 2}
@@ -2431,8 +2435,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 200
-  m_fontSizeBase: 200
+  m_fontSize: 185
+  m_fontSizeBase: 185
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
