@@ -3,41 +3,23 @@ using UnityEngine.UI;
 
 public class InfoManager : MonoBehaviour
 {
-    [SerializeField]
-    private string[] RULES_TEXT = {
+    [SerializeField] private Animator animator;
 
-        "Каб хадзиць, нажміце клавішы\n W і S.",
+    [Header("Rules Text")]
+    [SerializeField] private string[] RULES_TEXT;
+    [SerializeField] private string[] TRIGGERS_TEXT;
+    [SerializeField] private Text RulesText;
 
-        "Каб прагаць, нажміце прабел.",
-
-        "Каб атакаваць, нажміце ЛКМ",
-
-        };
-
-    [SerializeField]
-    private string[] TRIGGERS_TEXT = {
-        "Run",
-
-        "Jump",
-
-        "Attack"
-        };
-
-    [SerializeField]
-    private GameObject FirstPage;
-    [SerializeField]
-    private GameObject LastPage;
-    [SerializeField]
-    private GameObject SwitchPage;
-
-    [SerializeField]
-    private Text RulesText;
-    [SerializeField]
-    private Animator animator;
+    [Header("Pages")]
+    [SerializeField] private GameObject FirstPage;
+    [SerializeField] private GameObject LastPage;
+    [SerializeField] private GameObject SwitchPage;
 
     private int _index = -1;
 
-
+    /// <summary>
+    /// Switches to next page
+    /// </summary>
     public void ShowNextText()
     {
         int pageNum = _index + 1;
@@ -62,6 +44,9 @@ public class InfoManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Switches to previous page
+    /// </summary>
     public void ShowPreviousText()
     {
         int pageNum = _index - 1;

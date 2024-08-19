@@ -3,12 +3,10 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private float maxHealth;
+    [SerializeField] private Image fill;
+    [SerializeField] private Gradient gradient;
 
-    [SerializeField]
-    private Image fill;
-    [SerializeField]
-    private Gradient gradient;
+    private float maxHealth;
 
     public void SetMaxHealth(float maxHealth)
     {

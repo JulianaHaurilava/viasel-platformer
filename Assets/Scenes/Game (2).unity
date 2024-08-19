@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e391c712a76f5324da233f88b342dd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: ElevatorTrigger
+  stopperTag: ElevatorTrigger
 --- !u!1001 &169950519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9316,7 +9316,6 @@ GameObject:
   - component: {fileID: 1048029229}
   - component: {fileID: 1048029228}
   - component: {fileID: 1048029227}
-  - component: {fileID: 1048029226}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -9324,20 +9323,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1048029226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1048029225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2abae1e08f1fa6e489bc632ba6d69ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: {x: 0.5, y: 0.5}
-  target: {fileID: 752846701}
 --- !u!114 &1048029227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12620,7 +12605,7 @@ MonoBehaviour:
   levelCompletedPanel: {fileID: 1596465247}
   winPanel: {fileID: 0}
   pointsText: {fileID: 1130004708}
-  maxLevelPoints: 6
+  maxLevelPoints: 9
 --- !u!4 &1837934923
 Transform:
   m_ObjectHideFlags: 0

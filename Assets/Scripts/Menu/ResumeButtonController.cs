@@ -1,18 +1,29 @@
 using Lean.Gui;
 using UnityEngine;
 
+/// <summary>
+/// Controlls activity of resume button on main menu
+/// </summary>
 public class ResumeButtonController : MonoBehaviour
 {
-    [SerializeField]
-    private LeanButton resumeButton;
+    [SerializeField] private GameObject resumeButton;
+
     void Start()
+    {
+        SetResumeButton();
+    }
+
+    /// <summary>
+    /// Checks status and switches interactability of a resume button
+    /// </summary>
+    private void SetResumeButton()
     {
         PlayerData data = SaveSystem.LoadData();
         if (data == null)
         {
-            resumeButton.interactable = false;
+            resumeButton.SetActive(false);
             return;
         }
-        resumeButton.interactable = true;
+        resumeButton.SetActive(true);
     }
 }
