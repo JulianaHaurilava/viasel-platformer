@@ -2,24 +2,35 @@ using UnityEngine;
 
 public abstract class Mortal : Killer
 {
+    [Header("Health")]
     public float Health;
-    [SerializeField]
-    protected HealthBar healthBar;
-    [SerializeField]
-    private ScenesManager manager;
+
+    [SerializeField] protected HealthBar healthBar;
 
     private float _maxHealth;
 
     protected override void Start()
     {
         base.Start();
+        SetHealth();
+    }
+
+    /// <summary>
+    /// Sets maxHealth and healthBar
+    /// </summary>
+    private void SetHealth()
+    {
         _maxHealth = Health;
         if (healthBar != null)
         {
             healthBar.SetMaxHealth(_maxHealth);
         }
     }
-
+    
+    /// <summary>
+    /// Calculates remaining health and updates health bar 
+    /// </summary>
+    /// <param name="damage"></param>
     public virtual void GetDamage(float damage)
     {
         Health -= damage;
@@ -30,18 +41,18 @@ public abstract class Mortal : Killer
         CheckIfDead();
     }
 
-    public virtual void Heal(float healPoints)
-    {
-        Health = (Health + healPoints > _maxHealth) ? Health = _maxHealth : Health += healPoints;
-        healthBar.UpdateHealthBar(Health);
-    }
-
+    /// <summary>
+    /// Processes death of a unit
+    /// </summary>
     public virtual void Die()
     {
-        animator.SetTrigger("Die");
+        Animator.SetTrigger("Die");
         DeactivateHumanoid();
     }
 
+    /// <summary>
+    /// Prevents any interaction with dead unit
+    /// </summary>
     protected void DeactivateHumanoid()
     {
         Transform colliders = transform.Find("Colliders");
@@ -55,10 +66,9 @@ public abstract class Mortal : Killer
         }
     }
 
-    protected void EndGame()
-    {
-        manager.EndLevel(EndResult.DEATH);
-    }
+    /// <summary>
+    /// Sets audio and animator effects according to death check results
+    /// </summary>
     private void CheckIfDead()
     {
         if (Health <= 0)
@@ -69,7 +79,7 @@ public abstract class Mortal : Killer
         else
         {
             audioManager.Play("NonLethal");
-            animator.SetTrigger("Hurt");
+            Animator.SetTrigger("Hurt");
         }
     }
 }

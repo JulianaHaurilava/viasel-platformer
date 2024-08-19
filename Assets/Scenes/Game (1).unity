@@ -24731,6 +24731,10 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 99950363}
+    - target: {fileID: 588765503002373739, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
+      propertyPath: scenesManager
+      value: 
+      objectReference: {fileID: 1837934922}
     - target: {fileID: 2340625460640804604, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
       propertyPath: m_Mass
       value: 15

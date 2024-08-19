@@ -2,43 +2,40 @@ using UnityEngine;
 
 public abstract class Killer : Humanoid
 {
-    [Header("Attack")]
-    public float AttackRange = 1f;
-    [SerializeField]
-    private int attackDamage = 10;
+    [Header("Target")]
+    [SerializeField] private string targetTag;
 
-    [SerializeField]
-    protected float coolDownRate = 2;
+    [Header("Attack")]
+    [SerializeField] private int attackDamage = 1;
+    [SerializeField] protected float coolDownRate = 2;
+
+    public float AttackRange = 1f;
+
     private bool _readyToAttack = true;
     private float _coolDownTime = 0;
 
-    [SerializeField]
-    private string targetTag;
-    [SerializeField]
-    private LayerMask targetLayer;
-
     protected virtual void Update()
     {
-        if (_coolDownTime > 0)
-        {
-            _coolDownTime -= Time.deltaTime;
-        }
-        else
-        {
-            _readyToAttack = true;
-        }
+        CheckAttack();
     }
 
+    /// <summary>
+    /// Attacks if unit is ready
+    /// </summary>
     public void Attack()
     {
         if (_readyToAttack)
         {
-            animator.SetTrigger("Attack");
+            Animator.SetTrigger("Attack");
             audioManager.Play("Miss");
             ResetCoolDownRate();
         }
     }
 
+    /// <summary>
+    /// Damages enemy if collides
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(targetTag))
@@ -51,6 +48,24 @@ public abstract class Killer : Humanoid
         }
     }
 
+    /// <summary>
+    /// Checks if unit can attack and switches the attack status
+    /// </summary>
+    private void CheckAttack()
+    {
+        if (_coolDownTime > 0)
+        {
+            _coolDownTime -= Time.deltaTime;
+        }
+        else
+        {
+            _readyToAttack = true;
+        }
+    }
+
+    /// <summary>
+    /// Resets weapons cool down rate
+    /// </summary>
     private void ResetCoolDownRate()
     {
         _coolDownTime = coolDownRate;

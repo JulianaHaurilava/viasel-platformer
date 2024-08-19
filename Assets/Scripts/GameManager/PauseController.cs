@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class PauseController : MonoBehaviour
 {
-    private bool paused = false;
+    private bool _paused = false;
 
+    /// <summary>
+    /// Switches pause state
+    /// </summary>
     public void ChangeState()
     {
-        paused = !paused;
+        _paused = !_paused;
 
-        if (paused)
+        if (_paused)
             Time.timeScale = 0f;
         else Time.timeScale = 1f;
     }

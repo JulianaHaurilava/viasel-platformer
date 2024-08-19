@@ -1,15 +1,18 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerController))]
 public class PlayerInput : MonoBehaviour
 {
-    public bool CanMove = true;
+    #region Const
     private const string HORIZONTAL_AXIS = "Horizontal";
+    #endregion
 
-    private float input;
+    [HideInInspector] public bool CanMove = true;
 
+    private float _input;
     private PlayerMovement _playerMovement;
-    private Killer _killer;
+    private Killer _playerController;
 
     [Header("Keybinds")]
     [SerializeField]
@@ -20,18 +23,26 @@ public class PlayerInput : MonoBehaviour
     void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();
-        _killer = GetComponent<Killer>();
+        _playerController = GetComponent<Killer>();
     }
 
     void Update()
     {
+        ControlPlayer();
+    }
+
+    /// <summary>
+    /// Processes user input to move player
+    /// </summary>
+    private void ControlPlayer()
+    {
         if (!CanMove)
         {
-            input = 0;
+            _input = 0;
         }
         else
         {
-            input = Input.GetAxisRaw(HORIZONTAL_AXIS);
+            _input = Input.GetAxisRaw(HORIZONTAL_AXIS);
 
             if (Input.GetKeyDown(jumpKey))
             {
@@ -39,12 +50,13 @@ public class PlayerInput : MonoBehaviour
             }
             if (Input.GetKeyDown(attackKey))
             {
-                _killer.Attack();
+                _playerController.Attack();
             }
         }
     }
+
     private void FixedUpdate()
     {
-        _playerMovement.Move(input);
+        _playerMovement.Move(_input);
     }
 }

@@ -9,11 +9,8 @@ public enum EndResult
 
 public class GameEnd : MonoBehaviour
 {
-    [SerializeField]
-    private ScenesManager manager;
-
-    [SerializeField]
-    private EndResult endResult;
+    [SerializeField] private ScenesManager manager;
+    [SerializeField] private EndResult endResult;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -3,14 +3,14 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startingHealth = 100;            // начальное здоровье игрока
-    public int currentHealth;                   // текущее здоровье игрока
-    public Image healthSlider;                 // полоска здоровья
+    public int startingHealth = 100;
+    public int currentHealth;
+    public Image healthSlider;
 
-    Animator anim;                              // ссылка на аниматор
-    AudioSource playerAudio2;                    // ссылка на аудио источник
-    PlayerController playerController;              // ссылка на скрипт движения игрока
-    bool isDead;                                // мертв ли игрок
+    Animator anim;
+    AudioSource playerAudio2;
+    PlayerController playerController;
+    bool isDead;
 
     void Awake()
     {

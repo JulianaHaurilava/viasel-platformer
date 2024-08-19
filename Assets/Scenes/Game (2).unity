@@ -13794,6 +13794,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 497913654}
     - target: {fileID: 588765503002373739, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
+      propertyPath: scenesManager
+      value: 
+      objectReference: {fileID: 1837934922}
+    - target: {fileID: 588765503002373739, guid: 8e9587ebdddd4ec4296d8cd6c9a0588c, type: 3}
       propertyPath: inventoryManager
       value: 
       objectReference: {fileID: 0}

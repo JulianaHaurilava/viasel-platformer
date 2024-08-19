@@ -2,22 +2,39 @@ using UnityEngine;
 
 public class PlayerController : Mortal
 {
-    [SerializeField]
-    private BonusCollection bonusCollection;
+    [Header("Managers")]
+    [SerializeField] private ScenesManager scenesManager;
 
-    public int Level = 1;
-    public int Points = 0;
+    [HideInInspector] public int Level = 1;
+    [HideInInspector] public int Points = 0;
+
+    private BonusCollection _bonusCollection;
 
     protected override void Start()
     {
         base.Start();
 
+        _bonusCollection = GetComponent<BonusCollection>();
+        SetLevel();
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        Invoke(nameof(EndGame), 1f);
+    }
+
+    /// <summary>
+    /// Sets level stats according to save files
+    /// </summary>
+    private void SetLevel()
+    {
         PlayerData data = SaveSystem.LoadData();
         if (data != null)
         {
             Level = data.Level;
             Points = data.Points;
-            bonusCollection.UpdateBonuses(Points);
+            _bonusCollection.UpdateBonuses(Points);
 
             Health = data.Health;
             healthBar.UpdateHealthBar(Health);
@@ -25,9 +42,11 @@ public class PlayerController : Mortal
         }
     }
 
-    public override void Die()
+    /// <summary>
+    /// Processes violent death of player
+    /// </summary>
+    private void EndGame()
     {
-        base.Die();
-        Invoke(nameof(EndGame), 1f);
+        scenesManager.EndLevel(EndResult.DEATH);
     }
 }
