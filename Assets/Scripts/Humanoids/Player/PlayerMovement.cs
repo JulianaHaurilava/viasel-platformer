@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField]
     LayerMask whatIsGround;
-    private bool grounded = true;
+    private bool _grounded = true;
 
     private Rigidbody2D _rb;
     private Animator _animator;
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="input"></param>
     public void Move(float input)
     {
-        if (grounded)
+        if (_grounded)
         {
             _rb.velocity = new Vector2(input * speed, _rb.velocity.y);
         }
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         bool moving = input != 0;
-        _animator.SetBool("Run", moving);
+        _animator.SetBool("Run", moving && _grounded);
     }
 
     /// <summary>
@@ -61,24 +61,33 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     public void Jump()
     {
-        if (grounded)
+        if (_grounded)
         {
-            _animator.SetBool("IsJumping", true);
             _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            grounded = false;
+            SwitchGroundedState(false);
         }
     }
 
-    /// <summary>
-    /// Processes ground collision
-    /// </summary>
-    /// <param name="collision"></param>
+    #region Ground Collision Check
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if ((collision.gameObject.layer & 1) << whatIsGround.value != 0)
         {
-            grounded = true;
-            _animator.SetBool("IsJumping", false);
+            SwitchGroundedState(true);
         }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if ((collision.gameObject.layer & 1) << whatIsGround.value != 0)
+        {
+            SwitchGroundedState(false);
+        }
+    }
+    #endregion
+
+    private void SwitchGroundedState(bool state)
+    {
+        _grounded = state;
+        _animator.SetBool("IsJumping", !state);
     }
 }

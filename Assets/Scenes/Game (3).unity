@@ -16448,6 +16448,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1966523819}
     - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
+      propertyPath: TriggerDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: triggerDistance
       value: 15
       objectReference: {fileID: 0}
@@ -17334,6 +17338,10 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1966523819}
+    - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
+      propertyPath: TriggerDistance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: triggerDistance
       value: 15
@@ -18865,6 +18873,10 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1966523819}
+    - target: {fileID: 7709708481487440857, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
+      propertyPath: TriggerDistance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 9206244805993333426, guid: c1abe682260958a4a8762bf29c63ab91, type: 3}
       propertyPath: m_Name
       value: Enemy

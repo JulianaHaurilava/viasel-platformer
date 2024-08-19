@@ -274,18 +274,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942770ddfdee7644d9c40df2d9e6e793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 0}
   audioManager: {fileID: 0}
-  AttackRange: 1
+  Rb: {fileID: 0}
+  targetTag: Enemy
   attackDamage: 1
   coolDownRate: 1
-  targetTag: Enemy
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 128
+  AttackRange: 1
   Health: 10
   healthBar: {fileID: 0}
-  manager: {fileID: 0}
-  bonusCollection: {fileID: 5802923980490070960}
+  scenesManager: {fileID: 0}
   Level: 1
   Points: 0
 --- !u!1 &8286099379515729060
