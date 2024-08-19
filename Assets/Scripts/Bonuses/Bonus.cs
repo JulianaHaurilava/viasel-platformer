@@ -3,8 +3,7 @@ using UnityEngine;
 [RequireComponent (typeof(Animator))]
 public class Bonus : MonoBehaviour
 {
-    [SerializeField]
-    private int bonusValue = 1;
+    [SerializeField] private int bonusValue = 1;
 
     private Animator _animator;
 
@@ -13,6 +12,10 @@ public class Bonus : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    /// <summary>
+    /// Triggers on player to collect bonus
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

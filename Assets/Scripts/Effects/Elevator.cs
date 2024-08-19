@@ -2,27 +2,24 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
+    [SerializeField] private string stopperTag;
+
     private SliderJoint2D _sliderJoint;
-
-    [SerializeField]
-    private float heightMax = 6.9f;
-    [SerializeField]
-    private float heightMin = 1.42f;
-
-    [SerializeField]
-    private float speed = -3f;
 
     void Start()
     {
         _sliderJoint = GetComponent<SliderJoint2D>();
 
         JointMotor2D motor = _sliderJoint.motor;
-        motor.motorSpeed = speed;
     }
 
-    void Update()
+    /// <summary>
+    /// Switches direction of elevator
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (transform.position.y >= heightMax || transform.position.y <= heightMin)
+        if (collision.gameObject.CompareTag(stopperTag))
         {
             JointMotor2D motor = _sliderJoint.motor;
             motor.motorSpeed *= -1;

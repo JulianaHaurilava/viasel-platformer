@@ -3,22 +3,19 @@ using UnityEngine;
 
 public class CutsceneManager : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerInput player;
-
-    public static CutsceneManager Instance;
-
-    [SerializeField]
-    private List<CutsceneStruct> cutscenes = new();
-
-    public static Dictionary<string, GameObject> cutsceneDataBase = new();
+    public static CutsceneManager Manager;
     public static GameObject activeCutscene;
+
+    [SerializeField] private PlayerInput player;
+    [SerializeField] private List<CutsceneStruct> cutscenes = new();
+
+    private static Dictionary<string, GameObject> _cutsceneDataBase = new();
 
     private void Awake()
     {
-        Instance = this;
+        Manager = this;
         InitializeCutsceneDataBase();
-        foreach (var cutscene in cutsceneDataBase)
+        foreach (var cutscene in _cutsceneDataBase)
         {
             cutscene.Value.SetActive(false);
         }
@@ -26,33 +23,33 @@ public class CutsceneManager : MonoBehaviour
 
     private void InitializeCutsceneDataBase()
     {
-        cutsceneDataBase.Clear();
+        _cutsceneDataBase.Clear();
         for (int i = 0; i < cutscenes.Count; i++)
         {
-            cutsceneDataBase.Add(cutscenes[i].cutsceneKey, cutscenes[i].cutsceneObject);
+            _cutsceneDataBase.Add(cutscenes[i].cutsceneKey, cutscenes[i].cutsceneObject);
         }
     }
 
     public void StartCutscene(string cutsceneKey)
     {
-        if (!cutsceneDataBase.ContainsKey(cutsceneKey))
+        if (!_cutsceneDataBase.ContainsKey(cutsceneKey))
         {
             Debug.Log($"Катсцены c ключом \"{cutsceneKey}\" нет в cutsceneDataBase");
             return;
         }
         if (activeCutscene != null)
         {
-            if (activeCutscene == cutsceneDataBase[cutsceneKey])
+            if (activeCutscene == _cutsceneDataBase[cutsceneKey])
             {
                 return;
             }
         }
-        activeCutscene = cutsceneDataBase[cutsceneKey];
-        foreach (var cutscene in cutsceneDataBase)
+        activeCutscene = _cutsceneDataBase[cutsceneKey];
+        foreach (var cutscene in _cutsceneDataBase)
         {
             cutscene.Value.SetActive(false);
         }
-        cutsceneDataBase[cutsceneKey].SetActive(true);
+        _cutsceneDataBase[cutsceneKey].SetActive(true);
 
         player.CanMove = false;
     }
